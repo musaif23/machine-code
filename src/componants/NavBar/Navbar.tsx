@@ -82,6 +82,14 @@ const Navbar: React.FC = () => {
                 Stop-Watch
               </Link>
             </li>
+            <li className="nav-item nav-link">
+              <Link
+                style={{ textDecoration: "none", color: "#fff" }}
+                to={"/watch"}
+              >
+                Watch
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

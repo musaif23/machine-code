@@ -9,12 +9,15 @@ export interface DataType {
   items: [];
 }
 
-export const Class = () => {
+export const Class: React.FC = () => {
   const [explorerData, setExplorerData] = useState<DataType[]>(data);
   return (
     <>
       <div>
-        <ClassFolder explorer={explorerData} />
+        <ClassFolder
+          explorer={explorerData}
+          setExplorerData={setExplorerData}
+        />
       </div>
     </>
   );

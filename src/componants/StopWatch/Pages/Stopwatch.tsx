@@ -7,10 +7,10 @@ const Stopwatch: React.FC = () => {
   const [lap, setLap] = useState<string[]>([]);
 
   const timer = (time: number) => {
-    let miliSec: number = time % 100;
-    let sec: number = Math.floor((time / 1000) % 60);
-    let minutes: number = Math.floor((time / 60000) % 60);
-    return `${minutes} : ${sec} : ${miliSec}`;
+    const miliSec: string = `0${time % 100}`.slice(-2);
+    const sec: string = `0${Math.floor((time / 1000) % 60)}`.slice(-2);
+    const minutes: string = `0${Math.floor((time / 60000) % 60)}`.slice(-2);
+    return `${minutes}m : ${sec}s : ${miliSec}ms`;
   };
   const handleLap = () => {
     let array: string[] = [...lap];
@@ -81,17 +81,15 @@ const Stopwatch: React.FC = () => {
 
       {lap.length > 0 && (
         <div>
-          <ol>
-            {lap.map((e: number) => {
-              return (
-                <>
-                  <li>
-                    <span style={{ paddingLeft: "10px" }}>{e}</span>
-                  </li>
-                </>
-              );
-            })}
-          </ol>
+          {lap.map((e: number, i) => {
+            return (
+              <>
+                <div style={{ paddingLeft: "10px" }}>{`Rec ${
+                  i + 1
+                }  -  ${e}`}</div>
+              </>
+            );
+          })}
         </div>
       )}
     </>

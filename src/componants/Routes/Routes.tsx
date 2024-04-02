@@ -7,6 +7,7 @@ import FormValidation from "../FormValidation/Pages/Form";
 import PromiseComp from "../PromiseComp/PromiseComp";
 import Class from "../Classes/Pages/Class";
 import Stopwatch from "../StopWatch/Pages/Stopwatch";
+import Practice from "../StopWatch/Pages/Practice";
 
 const RoutesForRender: React.FC = () => {
   return (
@@ -14,6 +15,8 @@ const RoutesForRender: React.FC = () => {
       <Routes>
         <Route path="/fileManager" element={<FileManager />}></Route>
         <Route path="/stopwatch" element={<Stopwatch />}></Route>
+        <Route path="/watch" element={<Practice />}></Route>
+
         <Route path="/pagination" element={<PaginationData />}></Route>
         <Route path="/crausal" element={<Crausal />}></Route>
         <Route path="/formValidation" element={<FormValidation />}></Route>
