@@ -13,10 +13,25 @@ const Stopwatch: React.FC = () => {
     return `${minutes}m : ${sec}s : ${miliSec}ms`;
   };
   const handleLap = () => {
-    let array: string[] = [...lap];
+    const array: string[] = [...lap];
+    const lastIndex: number = array.length - 1;
+    const rec: string = timer(time);
 
-    array.push(timer(time));
+    if (array[lastIndex] !== rec) {
+      array.push(rec);
+    }
 
+    // const filterData: string[] = array.filter((e, ind) => {
+    //   let isSame = true;
+    //   for (let i = ind + 1; i < array.length; i++) {
+    //     if (e == array[i]) {
+    //       isSame = false;
+    //     }
+    //   }
+    //   if (isSame) {
+    //     return e;
+    //   }
+    // });
     setLap(array);
   };
 
